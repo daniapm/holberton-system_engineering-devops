@@ -1,1 +1,1 @@
-projecs
+projects
