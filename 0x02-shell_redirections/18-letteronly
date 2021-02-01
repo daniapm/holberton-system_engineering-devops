@@ -1,2 +1,2 @@
 B#!/bin/bash
-ls -ld [a-z]* | grep -i /etc/ssh/sshd_config | wc -l
+ls -ld [a-z]* | grep -i /etc/ssh/sshd_config
