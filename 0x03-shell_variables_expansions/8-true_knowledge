@@ -1,2 +1,2 @@
-B#!/bin/bash
+#!/bin/bash
 printf "%s\n" "$(($TRUEKNOWLEDGE+128))"
