@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying content of the current directory
+yourfilenames='*'
+for eachfile in $yourfilenames
+do
+   echo "$eachfile" | cut -d'-' -f2
+done
