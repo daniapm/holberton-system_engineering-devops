@@ -2,7 +2,7 @@
 # Process and PID file
 
 file=/var/run/holbertonscript.pid
-sudo touch '$file'
+sudo touch $file
 sudo bash -c 'echo $$ > $file'
 while true
 do
