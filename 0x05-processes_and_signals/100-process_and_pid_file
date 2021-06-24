@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # Process and PID file
 
-sudo touch "/var/run/dhkscript.pid"
-
+echo $$ > /var/run/holbertonscript.pid
+trap 'echo "I hate the kill command"; rm -rf /var/run/holbertonscript.pid; exit' SIGTERM
+trap 'echo Y U no love me?!' SIGINT
+trap 'sudo rm /var/run/holbertonscript.pid; exit' SIGQUIT
 while True
-do  
-    trap 'echo "I hate the kill command"; sudo rm /var/run/holbertonscript.pid' SIGTERM
-    trap 'echo "Y U no love me?!"' SIGINT
-    trap 'sudo rm /var/run/holbertonscript.pid' SIGQUIT
+do
     echo "To infinity and beyond"
     sleep 2
 done
