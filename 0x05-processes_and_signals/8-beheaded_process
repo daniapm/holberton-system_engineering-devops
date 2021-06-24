@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#  Beheaded process
+# Beheaded process
 
 pkill -SIGKILL -f "7-highlander"
