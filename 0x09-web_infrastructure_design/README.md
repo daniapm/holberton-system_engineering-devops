@@ -1,4 +1,6 @@
 0x09. Web infrastructure design
+![image](https://user-images.githubusercontent.com/77861274/126219373-5fc482ae-0491-459d-8def-e4d282429226.png)
+
  Foundations > System engineering & DevOps > Web stack
 
 Concepts:
