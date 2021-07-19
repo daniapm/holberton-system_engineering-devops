@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times If 9, say Hi!
+n=0; while (( n++ < 11));
+do
+    if [ $n = 10 ]
+    then
+        echo 'Hi'
+    else
+        echo 'Holberton School'
+    fi
+done
