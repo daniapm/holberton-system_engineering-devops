@@ -1,5 +1,7 @@
 0x09. Web infrastructure design
-![image](https://user-images.githubusercontent.com/77861274/126219373-5fc482ae-0491-459d-8def-e4d282429226.png)
+
+![image](https://user-images.githubusercontent.com/77861274/126220467-6ca3d792-124d-41e2-a499-5b5e88789417.png)
+
 
  Foundations > System engineering & DevOps > Web stack
 
@@ -10,6 +12,16 @@ Concepts:
 - Network basics
 - Load balancer
 - Server
+
+Objectives:
+
+- You must be able to draw a diagram covering the web stack you built with the sysadmin/devops track projects.
+- 
+-  You must be able to explain what each component is doing
+-  
+-  You must be able to explain system redundancy
+-  
+-  Know all the mentioned acronyms: LAMP, SPOF, QPS 
 
 Resources
 
