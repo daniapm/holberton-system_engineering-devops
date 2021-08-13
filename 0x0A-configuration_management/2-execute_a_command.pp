@@ -1,4 +1,4 @@
 # manifest that kills a process named killmenow.
-exec { 'test':
+exec { 'killmenow':
   command => 'pkill',
 }
