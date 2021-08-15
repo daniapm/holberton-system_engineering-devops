@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Client configuration file
+Host *
+	identityfile ~/.ssh/id_rsa
+Host 35.243.225.166
+	User ubuntu
+	identityfile ~/.ssh/holberton
+	GSSAPIAuthentication yes
