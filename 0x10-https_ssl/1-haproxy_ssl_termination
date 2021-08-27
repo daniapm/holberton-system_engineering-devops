@@ -1,47 +1,40 @@
-#!/usr/bin/env bash
-# Terminating SSL on HAproxy” means that HAproxy is configured
-# to handle encrypted traffic, unencrypt it and pass it on to
-# its destination.
-# Create a certificate using certbot and configure HAproxy
-# to accept encrypted traffic for your subdomain www.
-
 global
-    log /dev/log    local0
-    chroot /var/lib/haproxy
-    stats socket /run/haproxy/admin.sock mode 660 level admin
-    stats timeout 30s
-    user haproxy
-    group haproxy
-	tune.ssl.default-dh-param 2048
+         log /dev/log    local0
+         chroot /var/lib/haproxy
+         stats socket /run/haproxy/admin.sock mode 660 level admin
+         stats timeout 30s
+         user haproxy
+         group haproxy
+         tune.ssl.default-dh-param 2048
 
 defaults
-    log     global
-    mode    http
-    option  httplog
-    option  dontlognull
-    timeout connect 5000
-    timeout client  50000
-    timeout server  50000
-    option forwardfor
-	option http-server-close	
+         log     global
+         mode    http
+         option  httplog
+         option  dontlognull
+         timeout connect 5000
+         timeout client  50000
+         timeout server  50000
+         option forwardfor
+         option http-server-close	
 
 frontend www-http
-   bind 0.0.0.0:80
-   reqadd X-Forwarded-Proto:\ http
-   default_backend www-backend
+         bind 0.0.0.0:80
+         reqadd X-Forwarded-Proto:\ http
+         default_backend www-backend
 
 frontend www-https
-   bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/daniapm.tech.pem
-   reqadd X-Forwarded-Proto:\ https
-   acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-   use_backend letsencrypt-backend if letsencrypt-acl
-   default_backend www-backend
+         bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/daniapm.tech.pem
+         reqadd X-Forwarded-Proto:\ https
+         acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+         use_backend letsencrypt-backend if letsencrypt-acl
+         default_backend www-backend
 
 backend www-backend
-   balance  roundrobin
-   redirect scheme https if !{ ssl_fc }
-   server 2875-web-01 35.196.239.113:80 check
-   server 2875-web-02 3.94.160.0:80 check
+         balance  roundrobin
+         redirect scheme https if !{ ssl_fc }
+         server 2875-web-01 35.196.239.113:80 check
+         server 2875-web-02 3.94.160.0:80 check
 
 backend letsencrypt-backend
-   server letsencrypt 127.0.0.1:54321
+         server letsencrypt 127.0.0.1:54321
