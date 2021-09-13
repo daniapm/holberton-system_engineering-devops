@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""
+ Python script that, using this REST API, for a given employee ID,
+ returns information about his/her TODO list progress
+"""
 import requests
 import sys
-import json
 
 if __name__ == '__main__':
     url_emp = 'https://jsonplaceholder.typicode.com/users/{}'.
