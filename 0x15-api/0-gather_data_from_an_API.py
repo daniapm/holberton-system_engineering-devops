@@ -7,10 +7,10 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    url_emp = 'https://jsonplaceholder.typicode.com/users/{}'.
-    format(sys.argv[1])
-    url_task = 'https://jsonplaceholder.typicode.com/todos?userId={}'.
-    format(sys.argv[1])
+    url_emp = 'https://jsonplaceholder.typicode.com/users/{}'\
+              .format(sys.argv[1])
+    url_task = 'https://jsonplaceholder.typicode.com/todos?userId={}'\
+               .format(sys.argv[1])
     response_emp = requests.get(url_emp)
     employee = response_emp.json()
     response_task = requests.get(url_task)
