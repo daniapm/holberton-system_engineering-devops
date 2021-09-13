@@ -18,7 +18,7 @@ if __name__ == '__main__':
         if task['completed']:
             count += 1
             tittle.append(task['title'])
-    print('Employee {} is done with tasks({}/{})'
+    print('Employee {} is done with tasks({}/{}):'
           .format(employee['name'], count, len(tasks)))
     for element in tittle:
         print("\t ", element)
