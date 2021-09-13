@@ -4,9 +4,9 @@ import sys
 import json
 
 if __name__ == '__main__':
-    url_emp = 'https://jsonplaceholder.typicode.com/users/{}'
+    url_emp = 'https://jsonplaceholder.typicode.com/users/{}'\
     .format(sys.argv[1])
-    url_task = 'https://jsonplaceholder.typicode.com/todos?userId={}'
+    url_task = 'https://jsonplaceholder.typicode.com/todos?userId={}'\
     .format(sys.argv[1])
     response_emp = requests.get(url_emp)
     employee = response_emp.json()
