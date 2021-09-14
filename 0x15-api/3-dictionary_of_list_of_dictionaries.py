@@ -13,16 +13,16 @@ if __name__ == '__main__':
     response_emp = requests.get(url_emp).json()
 
     list = []
-    for user in response_emp:
-        user = user.get('username')
-    for task in response_task:
-        task_dict = {}
-        task_dict["username"] = user
-        task_dict["task"] = task.get('title')
-        task_dict["completed"] = task.get('completed')
-        id = task.get('userId')
-        list.append(task_dict)
+    task_dict = {}
     js = {}
-    js[task.get('id')] = list
+    for users in response_emp:
+        for task in response_task:
+            if task.get('userId') == users.get('id'):
+                task_dict["username"] = users.get('username')
+                task_dict["task"] = task.get('title')
+                task_dict["completed"] = task.get('completed')
+                id = task.get('userId')
+                list.append(task_dict)
+        js[users.get('id')] = list
     with open('todo_all_employees.json', 'w') as jsonfile:
         json.dump(js, jsonfile)
