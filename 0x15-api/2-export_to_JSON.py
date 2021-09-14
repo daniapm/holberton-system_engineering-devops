@@ -4,9 +4,10 @@
  script to export data in the JSON forma
 """
 import csv
+import json
 import requests
 import sys
-import json
+
 
 if __name__ == '__main__':
     url_emp = 'https://jsonplaceholder.typicode.com/users/{}'\
