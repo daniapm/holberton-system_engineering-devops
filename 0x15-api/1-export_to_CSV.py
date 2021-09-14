@@ -15,8 +15,8 @@ if __name__ == '__main__':
     response_task = requests.get(url_task).json()
     response_emp = requests.get(url_emp).json()
     name = response_emp['username']
-    with open('{}.csv'.format(sys.argv[1]), 'w') as f:
-        writer = csv.writer(f)
+    with open('{}.csv'.format(sys.argv[1]), 'w', newline='') as f:
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         list = {}
         for task in response_task:
             list = (sys.argv[1], name, task['completed'], task['title'])
