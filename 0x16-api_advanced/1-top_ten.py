@@ -22,4 +22,5 @@ def top_ten(subreddit):
         tittle = page.json()['data']['children']
         for post in tittle:
             print(post['data']['title'])
-    return print("None")
+    else:
+        return print("None")
